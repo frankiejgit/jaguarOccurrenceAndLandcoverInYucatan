@@ -1,4 +1,4 @@
-// Mapping Jaguar Occurrence and Land Cover Change in the Mesoamerican Biological Corridor (MBC)
+// Mapping Jaguar Occurrence and Land Cover Change in the Mayan Biosphere Reserve
 // Author: Francisco Gonzalez (gonzalf3@oregonstate.edu)
 // Last Updated: 16-03-2025
 
@@ -7,33 +7,33 @@
 ////////////////////////////
 
 // Background:
-// Central America is a biodiversity hotspot, but habitat loss threatens ecosystem resilience[cite: 1].
-// Habitat fragmentation disrupts wildlife connectivity[cite: 2, 3].
-// Jaguars are an umbrella species[cite: 4].
-// Remote sensing is useful for analyzing landscape changes[cite: 5].
+// Central America is a biodiversity hotspot, but habitat loss threatens ecosystem resilience
+// Habitat fragmentation disrupts wildlife connectivity
+// Jaguars are an umbrella species
+// Remote sensing is useful for analyzing landscape changes
 
 // Objective:
-// Map jaguar habitat loss over time using Sentinel-2 and jaguar occurrence records[cite: 6].
+// Map jaguar habitat loss over time using MODIS imagery and jaguar occurrence records
 
 // Research Questions:
-// How has jaguar habitat changed over time? [cite: 7]
-// What spatial patterns can be observed between land use changes and jaguar occurrences? [cite: 8]
+// How has jaguar habitat changed over time?
+// What spatial patterns can be observed between land use changes and jaguar occurrences?
 
 ////////////////////////////
 //// 2. Study Area //////////
 ////////////////////////////
 
-// Region: Mesoamerican Biological Corridor (MBC) [cite: 9]
-// A vast ecological network across Central America[cite: 9].
-// Hosts 9% of the world’s terrestrial biodiversity[cite: 11].
-// Threatened by anthropogenic disturbances[cite: 11].
+// Region: Mayan Biosphere Reserve
+// A vast ecological network across Central America
+// Hosts 9% of the world’s terrestrial biodiversity
+// Threatened by anthropogenic disturbances
 
 // Justification:
-// MBC is important for jaguar conservation.
-// Remote sensing enables large-scale temporal analysis[cite: 13].
-// Jaguar data can be combined with land use changes[cite: 14].
+// MBC is important for jaguar conservation
+// Remote sensing enables large-scale temporal analysis
+// Jaguar data can be combined with land use changes
 
-// Define the MBC geometry
+// Define the geometry for region of interest
 var mbc = ee.Geometry.Polygon([
     [-92.20043741994952, 15.98275961958455],
     [-88.04760538869952, 15.98275961958455],
@@ -55,6 +55,7 @@ var years = ee.List.sequence(2008, 2023);
 // Land Cover Data: MODIS MCD12Q1
 //   - Provides land cover type information
 //   - Available at 500m resolution
+
 var modisLC = ee.ImageCollection('MODIS/061/MCD12Q1')
     .filterDate('2008-01-01', '2024-12-31')
     .select('LC_Type1');
@@ -62,6 +63,7 @@ var modisLC = ee.ImageCollection('MODIS/061/MCD12Q1')
 // Jaguar Occurrence Data: GBIF
 //   - Species distribution data from verified sources
 //   - Spatiotemporal records [~621]
+
 var jaguarOccurrence = ee.FeatureCollection("users/franciscoatabey/mbcJaguarOccurrence");
 
 // Display land cover using color codes references in MODIS documentation
