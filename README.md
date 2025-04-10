@@ -1,7 +1,7 @@
 # Mapping Jaguar Presence and Land Cover Change over time around the Mexico-Guatemala-Belize Border
 
 ## About
-This is part of a remote sensing project for a graduate course using MODIS and GBIF-derived data. 
+This is part of a remote sensing project for a graduate course using MODIS and GBIF-derived data to visually inspect the distribution of jaguar (Panthera onca) sightings against changes in land use in and around the Mayan Biosphere Reserve from 2008 to 2023.
 
 ## Repository Guide
 
