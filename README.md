@@ -11,4 +11,4 @@ The `data/` folder contains the raw occurrence records (in .txt format) as downl
 
 One of the assets created from this project is a time-series animation where changes in land use (defined by the categories provided by the annual MODIS land use survey) are displayed alongside jaguar sightings for that year. 
 
-![Time series 2008-2023](assets/output_2008to2023.gif)
+![Time series 2008-2023](assets/timeseries_2008to2023.gif)
